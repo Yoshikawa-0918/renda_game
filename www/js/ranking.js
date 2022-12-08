@@ -17,31 +17,20 @@ function toRanking() {
 // 【mBaaS】保存したデータの検索と取得
 function checkRanking() {
     // **********【問題２】ランキングを表示しよう！**********
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     // ******************************************************
 }
 
 // テーブルにデータを設定
 function setData(array) {
-   var table = document.getElementById("rankingTable");
-    for (i=0; i<array.length; i++) {
+    var table = document.getElementById("rankingTable");
+    for (i = 0; i < array.length; i++) {
         // 名前の設定
         var name = table.rows[i].cells[1];
         name.innerHTML = array[i].name + "さん";
         // スコアの設定
         var score = table.rows[i].cells[2];
         score.innerHTML = array[i].score + "連打";
-    }   
+    }
 }
 
 
