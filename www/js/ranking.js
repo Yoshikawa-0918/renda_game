@@ -55,10 +55,3 @@ function setData(array) {
         score.innerHTML = array[i].score + "連打";
     }
 }
-
-
-
-
-
-
-
