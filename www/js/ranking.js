@@ -9,23 +9,38 @@
 // 「ランキングを見る」ボタン押下時の処理
 function toRanking() {
     // データ取得
-    checkRanking();
+    checkRanking1();
     // ランキング画面へ遷移
     window.location.href = "#ranking-page";
 }
 
 // 【mBaaS】保存したデータの検索と取得
-function checkRanking() {
+function checkRanking1() {
     // **********【問題２】ランキングを表示しよう！**********
     // 
-    var highScore = ncmb.DataStore('GameScore');
+    var highScore = ncmb.DataStore("GameScore");
 
-    highScore.order("score", true).limit(5).fetchAll().then(function(results){
+    highScore.order("score", true).limit(10).fetchAll().then(function(results){
         console.log("スコアの検索に成功しました。");
         setData(results);
     }).catch(function(err){
         console.log("検索に失敗しました。エラー：" + err);
     });
+
+}
+
+function checkRanking2() {
+    // **********【問題２】ランキングを表示しよう！**********
+    // 
+    var highScore = ncmb.DataStore("GameScore");
+
+    highScore.order("score", false).limit(10).fetchAll().then(function(results){
+        console.log("スコアの検索に成功しました。");
+        setData(results);
+    }).catch(function(err){
+        console.log("検索に失敗しました。エラー：" + err);
+    });
+
 }
 
 // テーブルにデータを設定
